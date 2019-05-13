@@ -1,7 +1,13 @@
 
 class DockingStation
-  storage = ["bike1"]
+  attr_reader :storage
+
+    def initialize
+      @storage = 10
+    end
+
   def release_bike
-    storage.delete_at(0)
+    @storage -= 1
+    puts storage
   end
 end

@@ -1,4 +1,4 @@
-require './library/docking_station'
+require './library/boris_bikes.rb'
 
 describe DockingStation do
   it 'Release bike from the docking station' do
@@ -7,6 +7,6 @@ describe DockingStation do
   #act
   docking_station.release_bike
   #assertion
-  expect(docking_station[0]).to eq(0)
+  expect(docking_station.storage).to eq(9)
   end
 end
