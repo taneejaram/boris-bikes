@@ -1,0 +1,5 @@
+uninitialized constant DockingStation (NameError)
+file path: /Users/student/boris-bikes
+Line 1
+when a given name is invalid or undefined. (no class created)
+fix error by creating class DockingStation (defined)
