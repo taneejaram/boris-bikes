@@ -6,11 +6,8 @@ attr_reader :bikes
   end
 
   def release_bike
-    if @bikes.empty?
-      raise "No bike here"
-    else
-      @bikes.pop
-    end
+    raise "No bike here" if @bikes.empty?
+    @bikes.pop
   end
 
   def dock(bike)
