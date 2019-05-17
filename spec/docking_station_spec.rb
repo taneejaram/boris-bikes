@@ -1,7 +1,6 @@
 require './library/docking_station'
 require './library/bike'
 
-
 describe DockingStation do
 
   let(:docking_station) {
@@ -24,10 +23,9 @@ describe DockingStation do
   end
 
   it 'can get a bike' do
-    #Act
-    bike = docking_station.release_bike
+    docking_station.dock(bike)
     #Assert
-    expect(docking_station.release_bike).to eq(true)
+    expect(docking_station.release_bike).to eq(bike)
   end
 
   it 'will return the array of bikes in the docking station when you dock a bike' do
@@ -35,9 +33,22 @@ describe DockingStation do
   end
 
   it 'can store a bike at the docking station' do
-    docking_station.dock("bike")
+    docking_station.dock(bike)
     #Assert
-    expect(docking_station.bikes).to eq(["bike"])
+    expect(docking_station.bikes).to eq([bike])
   end
+
+  it 'does not release a bike/raises an error if there are none stored in the bikes array' do
+    expect{docking_station.release_bike}.to raise_error("No bike here")
+  end
+
+  # it 'it raises an error if the capacity of 1 has been reached in the bikes array' do
+  #
+  #   expect{docking_station.dock(bike)}.to raise_error("Cannot dock, capacity full")
+  # end
+
+
+
+
 
 end

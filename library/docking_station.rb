@@ -5,12 +5,20 @@ attr_reader :bikes
     @bikes = []
   end
 
-  def dock(bike)
-    @bikes.push(bike)
+  def release_bike
+    if @bikes.empty?
+      raise "No bike here"
+    else
+      @bikes.pop
+    end
   end
 
-  def release_bike
-    true
+  def dock(bike)
+    if @bikes.length == 0
+      @bikes.push(bike)
+    else
+      raise "Cannot dock, capacity full"
+    end
   end
 
 end
