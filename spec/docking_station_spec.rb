@@ -42,13 +42,15 @@ describe DockingStation do
     expect{docking_station.release_bike}.to raise_error("No bike here")
   end
 
-  it 'raises an error if the capacity of 1 has been reached in the bikes array' do
-    docking_station.dock(bike)
+  # it 'raises an error if the capacity of 1 has been reached in the bikes array' do
+  #   {docking_station.dock(bike)}
+  #   expect{docking_station.dock(bike)}.to raise_error("Cannot dock, capacity full")
+  # end
+
+  it 'raises an error if the capacity of 20 has been reached in the bikes array' do
+    20.times {docking_station.dock(bike)}
     expect{docking_station.dock(bike)}.to raise_error("Cannot dock, capacity full")
   end
-
-
-
 
 
 end

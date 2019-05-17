@@ -11,8 +11,9 @@ attr_reader :bikes
   end
 
   def dock(bike)
-    raise "Cannot dock, capacity full" if @bikes.length != 0
+    raise "Cannot dock, capacity full" if @bikes.length >= 20
       @bikes.push(bike)
   end
+
 
 end
